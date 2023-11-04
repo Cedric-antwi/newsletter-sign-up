@@ -141,7 +141,7 @@
   <p>A confirmation email has been sent to <strong id="email"></strong>
   Please open it and click the button inside to confirm your subscription.</p>
 
-  <button class="dismiss-btn">Dismiss message</button>
+  <button class="dismiss-btn" id="dismiss-btn">Dismiss message</button>
 </div>
 
   <!-- Success message end -->
@@ -158,12 +158,18 @@
     let userEmail = document.getElementById("email-input")
     const errorMsg = document.getElementById("error-msg")
 
+    let closeBtn = document.getElementById("dismiss-btn")
 
     submitBtn.addEventListener("click", () => {
       if (userEmail.value !== "" && userEmail.value.includes("@")){
         emailField.innerText = userEmail.value
         newsLetterForm.style.display = "none"
         successContainer.style.display = "flex"
+
+        userEmail.style.border = "1px solid hsl(231, 7%, 60%)"
+        errorMsg.style.display = "none"
+
+
       } else {
         errorMsg.style.display = "inline"
         userEmail.style.border = "1px solid hsl(4, 100%, 67%)"
@@ -171,6 +177,11 @@
         userEmail.style.backgroundColor = "rgb(243 157 173 / 39%)"
       }
 
+      closeBtn.addEventListener("click", () => {
+        successContainer.style.display = "none"
+        newsLetterForm.style.display = "flex"
+
+      })
 
     })
   </script>
