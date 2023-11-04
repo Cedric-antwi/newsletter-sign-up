@@ -24,7 +24,6 @@
        display: flex;
        border-radius: 10px;
        width: 50%;
-       /*max-height: 60vh;*/
        margin: 8vh auto;
        gap: 3rem;
        height: 35rem;
@@ -62,10 +61,16 @@
       width: 75%;
       padding: 12px;
       border-radius: 6px;
+      border: none;
       color: hsl(0, 0%, 100%);
-      border: 1px solid hsl(234, 29%, 20%);
-      background-color: hsl(234, 29%, 20%);
+      background: hsl(234, 29%, 20%);
       cursor: pointer;
+      transition: background 0.5s ease-in;
+    }
+    .email-submit-btn:hover {
+      background: linear-gradient(90deg, rgba(255,105,180,1) 13%, rgba(253,29,29,1) 36%, rgba(252,176,69,1) 100%);
+      border: none;
+
     }
     .email-action-container p{
       font-weight: bold;
@@ -135,7 +140,7 @@
   <!-- Success message start -->
 <div class="success-container" id="success-container">
 
-  <img src="assets/images/icon-success.svg" class="checklist-img">
+  <img src="assets/images/icon-list.svg" class="checklist-img">
   <h2>Thanks for subscribing!</h2>
 
   <p>A confirmation email has been sent to <strong id="email"></strong>
@@ -169,7 +174,6 @@
         userEmail.style.border = "1px solid hsl(231, 7%, 60%)"
         errorMsg.style.display = "none"
 
-
       } else {
         errorMsg.style.display = "inline"
         userEmail.style.border = "1px solid hsl(4, 100%, 67%)"
@@ -182,7 +186,6 @@
         newsLetterForm.style.display = "flex"
 
       })
-
     })
   </script>
 </body>
