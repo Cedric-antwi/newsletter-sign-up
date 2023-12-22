@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Click Here](#)
+- Live Site URL: [Click Here](https://newsletter-sign-up-lovat.vercel.app/)
 
 ## My process
 - Looked over the pre-made, provided Figma files.
